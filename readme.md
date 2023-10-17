@@ -8,3 +8,31 @@ Live project:
 - DataBase/Mongodb: https://www.mongodb.com/
 - PassHider/dotenv: https://www.npmjs.com/package/dotenv 
 - CRUD operations: https://www.mongodb.com/docs/drivers/node/current/
+
+
+- create a file : vercel.json 
+and paste this code. dest=(set initial file name).
+
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "./index.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "index.js",
+            "methods": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE",
+                "OPTIONS"
+            ]
+        }
+    ]
+}
